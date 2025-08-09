@@ -9,15 +9,24 @@ const resources = {
   en: {
     translation: {
       card: {
-        name: "Your name",
+        fields: {
+          nameLabel: "Name:",
+          namePlaceholder: "Enter your name",
+          optionLabel: "Option {{number}}:",
+          optionPlaceholder: "Enter option {{number}}",
+        },
       },
     },
   },
   pt: {
     translation: {
       card: {
-        name: "Seu nome",
-        p,
+        fields: {
+          nameLabel: "Nome:",
+          namePlaceholder: "Digite seu nome",
+          optionLabel: "Opção {{number}}:",
+          optionPlaceholder: "Digite a opção {{number}}",
+        },
       },
     },
   },
