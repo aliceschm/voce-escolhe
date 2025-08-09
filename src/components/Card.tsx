@@ -1,3 +1,4 @@
+import Button from "./Button";
 interface CardProps {
   //Input props
   name: string;
@@ -46,6 +47,9 @@ export default function Card({
             />
           </label>
         ))}
+      </div>
+      <div>
+        <Button label="Submit" onClick={() => alert("Button clicked!")} />
       </div>
     </div>
   );
