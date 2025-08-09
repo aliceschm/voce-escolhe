@@ -1,4 +1,7 @@
 import Button from "./Button";
+
+//TODO:
+//change button function (add function to submit options)
 interface CardProps {
   //Input props
   name: string;
