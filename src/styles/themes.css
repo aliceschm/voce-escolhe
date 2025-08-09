@@ -1,4 +1,29 @@
 /* Common styles */
+.card {
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  gap: 1rem; /* espaço entre os elementos */
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.card > label {
+  display: flex;
+  flex-direction: column; /* label e input empilhados */
+  font-weight: 600;
+}
+
+.card input[type="text"] {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
 .button {
   border-radius: 8px;
   padding: 12px 24px;
