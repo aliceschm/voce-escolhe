@@ -1,12 +1,13 @@
+import "../styles/themes.css";
 interface ButtonProps {
-  text: string;
+  label: string;
   onClick: () => void;
 }
 
-function Button({ text, onClick }: ButtonProps) {
+function Button({ label, onClick }: ButtonProps) {
   return (
-    <button className="button-glass" onClick={onClick}>
-      {text}
+    <button className="button" onClick={onClick}>
+      {label}
     </button>
   );
 }
