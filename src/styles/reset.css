@@ -1,0 +1,111 @@
+/* src/reset.css - Modern reset with sensible defaults */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --focus-ring: 3px;
+  --focus-color: #2673ff;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default spacing and use more predictable defaults */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+
+/* Make images and media behave */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove built-in form element styles */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+}
+
+/* Remove native numbers & spinners in inputs on webkit */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Text-level resets */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+strong {
+  font-weight: 600;
+}
+small {
+  font-size: 0.875em;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Accessible focus styles (replace or remove if using your own focus system) */
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring) var(--focus-color);
+  border-radius: 4px;
+}
+
+/* Utilities: sensible defaults for layout containers */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Optional: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
