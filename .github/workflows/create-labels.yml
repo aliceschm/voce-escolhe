@@ -1,7 +1,7 @@
 name: Create default labels
 
 on:
-  workflow_dispatch:  # roda manualmente via Actions > Run workflow
+  workflow_dispatch:  # runs manually in Actions > Run workflow
 
 permissions:
   issues: write
