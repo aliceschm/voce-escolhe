@@ -11,14 +11,24 @@ type MatchData = {
   weight: number;
 };
 
+type MatchResult = {
+  type: "match";
+  data: { option: string; votes: number; weight: number }[];
+};
+
+type RandomResult = {
+  type: "random";
+  data: string | null;
+};
+
+type Result = MatchResult | RandomResult | null;
+
 export function useChooseOption() {
   const [numPlayers, setNumPlayers] = useState(2);
   const [gameStarted, setGameStarted] = useState(false);
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [currentPlayer, setCurrentPlayer] = useState(0);
-  const [result, setResult] = useState<
-    { option: string; votes: number; weight: number }[] | string | null
-  >(null);
+  const [result, setResult] = useState<Result>(null);
 
   function startGame() {
     setParticipants(
