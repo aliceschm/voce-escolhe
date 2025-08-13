@@ -1,7 +1,7 @@
 interface ResultCardProps {
   title: string;
   text: string; // translated phrase from i18n
-  result: string; // winner option
+  result: string | null; // winner option
 }
 
 export function ResultCard({ title, text, result }: ResultCardProps) {
