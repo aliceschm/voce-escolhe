@@ -25,7 +25,7 @@ const resources = {
       },
       rCard: {
         fields: {
-          title: "Result",
+          title: "Match Results",
           text: [
             "You thought, hesitated… but fate was already laughing at you. The chosen option is:",
             "After a thorough scientific analysis, we reached:",
