@@ -21,6 +21,7 @@ const resources = {
           namePlaceholder: "Enter your name",
           optionLabel: "Option {{number}}:",
           optionPlaceholder: "Enter option {{number}}",
+          button: "Submit",
         },
       },
       rCard: {
@@ -38,6 +39,7 @@ const resources = {
             "We let luck decide… and it was in a good mood. The answer is:",
             "And in the most suspicious raffle ever, the winner is:",
           ],
+          button: "Restart",
         },
       },
     },
@@ -57,6 +59,7 @@ const resources = {
           namePlaceholder: "Digite seu nome",
           optionLabel: "Opção {{number}}:",
           optionPlaceholder: "Digite a opção {{number}}",
+          button: "Submeter",
         },
       },
       rCard: {
@@ -74,6 +77,7 @@ const resources = {
             "Deixamos a sorte decidir… e ela estava de bom humor. A resposta é:",
             "E no sorteio mais suspeito do mundo, o vencedor foi:",
           ],
+          button: "Recomeçar",
         },
       },
     },

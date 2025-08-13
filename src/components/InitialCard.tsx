@@ -12,14 +12,15 @@ interface InitialCardProps {
 export function InitialCard({
   text,
   numPlayers,
+  buttonLabel,
   setNumPlayers,
   onStart,
 }: InitialCardProps) {
   return (
-    <div className="initial-card">
+    <div className="card">
       <h2>{text}</h2>
       <NumberDropdown value={numPlayers} onChange={setNumPlayers} />
-      <Button label="Start" onClick={onStart} />
+      <Button label={buttonLabel} onClick={onStart} />
     </div>
   );
 }

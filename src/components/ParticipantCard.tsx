@@ -11,6 +11,7 @@ interface ParticipantCardProps {
   onSubmit: () => void;
 
   //UI props (for translation)
+  buttonLabel: string;
   text: string;
   nameLabel: string;
   namePlaceholder: string;
@@ -19,6 +20,7 @@ interface ParticipantCardProps {
 }
 
 export function ParticipantCard({
+  buttonLabel,
   text,
   name,
   options,
@@ -57,7 +59,7 @@ export function ParticipantCard({
         ))}
       </div>
       <div>
-        <Button label="Submit" onClick={onSubmit} />
+        <Button label={buttonLabel} onClick={onSubmit} />
       </div>
     </div>
   );
