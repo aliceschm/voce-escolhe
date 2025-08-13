@@ -1,16 +1,17 @@
 import Button from "./Button";
 
 interface ParticipantCardProps {
-  // Input props
+  //Input props
   name: string;
   options: string[];
+
+  //Callbacks
   onChangeName: (value: string) => void;
   onChangeOption: (index: number, value: string) => void;
-
-  // Function to call when submitting participant data
   onSubmit: () => void;
 
-  // Html props (for translation)
+  //UI props (for translation)
+  text: string;
   nameLabel: string;
   namePlaceholder: string;
   optionLabel: (index: number) => string;
@@ -18,6 +19,7 @@ interface ParticipantCardProps {
 }
 
 export function ParticipantCard({
+  text,
   name,
   options,
   onChangeName,
@@ -30,6 +32,7 @@ export function ParticipantCard({
 }: ParticipantCardProps) {
   return (
     <div className="card">
+      <h1>{text}</h1>
       <label>
         {nameLabel}
         <input

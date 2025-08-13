@@ -25,6 +25,7 @@ const resources = {
       },
       rCard: {
         fields: {
+          title: "Result",
           text: [
             "You thought, hesitated… but fate was already laughing at you. The chosen option is:",
             "After a thorough scientific analysis, we reached:",
@@ -60,6 +61,7 @@ const resources = {
       },
       rCard: {
         fields: {
+          title: "Resultado",
           text: [
             "Você pensou, hesitou… mas o destino já estava rindo de você. A opção escolhida é:",
             "Depois de uma rigorosa análise científica (mentira), chegamos a:",
