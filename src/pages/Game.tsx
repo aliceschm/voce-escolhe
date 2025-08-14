@@ -11,6 +11,7 @@ export function Game() {
     setNumPlayers,
     gameStarted,
     startGame,
+    resetGame,
     participants,
     currentPlayer,
     updateParticipantName,
@@ -80,7 +81,7 @@ export function Game() {
         text={randomPhrase}
         result={option}
         buttonLabel={t("rCard.fields.button")}
-        onRestart={() => console.log("Add restart function")}
+        onRestart={resetGame}
       />
     </div>
   );

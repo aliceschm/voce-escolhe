@@ -126,6 +126,13 @@ export function useChooseOption() {
       setResult({ type: "random", data: randomChoice });
     }
   }
+  function resetGame() {
+    setNumPlayers(2);
+    setGameStarted(false);
+    setParticipants([]);
+    setCurrentPlayer(0);
+    setResult(null);
+  }
 
   return {
     numPlayers,
@@ -139,5 +146,6 @@ export function useChooseOption() {
     saveParticipant,
     allSaved,
     result,
+    resetGame,
   };
 }
