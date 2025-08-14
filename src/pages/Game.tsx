@@ -62,6 +62,7 @@ export function Game() {
           onChangeOption={(i, v) =>
             updateParticipantOption(currentPlayer, i, v)
           }
+          buttonLabel={t("pCard.fields.button")}
           onSubmit={() => saveParticipant(currentPlayer)}
           nameLabel={t("pCard.fields.nameLabel")}
           namePlaceholder={t("pCard.fields.namePlaceholder")}
@@ -78,6 +79,8 @@ export function Game() {
         title={t("rCard.fields.title") || "Match Results"}
         text={randomPhrase}
         result={option}
+        buttonLabel={t("rCard.fields.button")}
+        onRestart={() => console.log("Add restart function")}
       />
     </div>
   );
