@@ -5,12 +5,14 @@ export function Header() {
   const { i18n } = useTranslation();
 
   return (
-    <LangDropdown
-      value={i18n.language}
-      onChange={(lang) => {
-        i18n.changeLanguage(lang);
-        localStorage.setItem("lang", lang);
-      }}
-    />
+    <header className="header">
+      <LangDropdown
+        value={i18n.language}
+        onChange={(lang) => {
+          i18n.changeLanguage(lang);
+          localStorage.setItem("lang", lang);
+        }}
+      />
+    </header>
   );
 }
