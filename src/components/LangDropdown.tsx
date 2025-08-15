@@ -1,13 +1,25 @@
-interface LangDropdownProps {
-  value: string;
-  onChange: (value: string) => void;
-}
+import { useState } from "react";
 
-export function LangDropdown({ value, onChange }: LangDropdownProps) {
+export default function LangDropdown() {
+  const [selected, setSelected] = useState<"en" | "pt">("en");
+  const [open, setOpen] = useState(false);
+
+  const handleSelect = (val: "en" | "pt") => {
+    setSelected(val);
+    setOpen(false);
+  };
+
   return (
-    <select value={value} onChange={(e) => onChange(String(e.target.value))}>
-      <option value={"en"}>English</option>
-      <option value={"pt"}>Português (Brasil)</option>
-    </select>
+    <div>
+      <div onClick={() => setOpen((prev) => !prev)}>
+        {selected === "en" ? "English" : "Português (Brasil)"}
+      </div>
+      {open && (
+        <ul>
+          <li onClick={() => handleSelect("en")}>English</li>
+          <li onClick={() => handleSelect("pt")}>Português (Brasil)</li>
+        </ul>
+      )}
+    </div>
   );
 }
