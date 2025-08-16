@@ -1,4 +1,4 @@
-import { NumberDropdown } from "./NumberDropdown";
+import { PlayersDropdown } from "./PlayersDropdown";
 import Button from "./Button";
 
 interface InitialCardProps {
@@ -19,7 +19,7 @@ export function InitialCard({
   return (
     <div className="card">
       <h2>{text}</h2>
-      <NumberDropdown value={numPlayers} onChange={setNumPlayers} />
+      <PlayersDropdown value={numPlayers} onChange={setNumPlayers} />
       <Button label={buttonLabel} onClick={onStart} />
     </div>
   );
