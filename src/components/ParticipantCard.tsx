@@ -1,33 +1,40 @@
 import Button from "./Button";
 
-//TODO:
-//change button function (add function to submit options)
-interface CardProps {
+interface ParticipantCardProps {
   //Input props
   name: string;
   options: string[];
+
+  //Callbacks
   onChangeName: (value: string) => void;
   onChangeOption: (index: number, value: string) => void;
+  onSubmit: () => void;
 
-  //Html props (for translation purposes)
+  //UI props (for translation)
+  buttonLabel: string;
+  text: string;
   nameLabel: string;
   namePlaceholder: string;
   optionLabel: (index: number) => string;
   optionPlaceholder: (index: number) => string;
 }
 
-export default function Card({
+export function ParticipantCard({
+  buttonLabel,
+  text,
   name,
   options,
   onChangeName,
   onChangeOption,
+  onSubmit,
   nameLabel,
   namePlaceholder,
   optionLabel,
   optionPlaceholder,
-}: CardProps) {
+}: ParticipantCardProps) {
   return (
     <div className="card">
+      <h1>{text}</h1>
       <label>
         {nameLabel}
         <input
@@ -52,7 +59,7 @@ export default function Card({
         ))}
       </div>
       <div>
-        <Button label="Submit" onClick={() => alert("Button clicked!")} />
+        <Button label={buttonLabel} onClick={onSubmit} />
       </div>
     </div>
   );

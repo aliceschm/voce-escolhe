@@ -1,21 +1,16 @@
-import "./styles/themes.css";
-import Card from "./components/Card";
-import { useCardState } from "./hooks/useCardState";
+import { Header } from "./components/Header";
+import { Game } from "./pages/Game";
+//TODO:
+//  opcao de cancelar participante. ex escolheu 5 mas no meio do jogo so 4 vao participar
+// validacao de inputs, pelo menos uma opcao tem que estar preenchida
 
-function App() {
-  const { name, setName, options, updateOption } = useCardState();
+export default function App() {
   return (
-    <Card
-      name={name}
-      options={options}
-      onChangeName={setName}
-      onChangeOption={updateOption}
-      nameLabel="Nome"
-      namePlaceholder="Digite seu nome"
-      optionLabel={(i) => `Opção ${i + 1}`}
-      optionPlaceholder={(i) => `Digite a opção ${i + 1}`}
-    />
+    <>
+      <Header />
+      <main>
+        <Game />
+      </main>
+    </>
   );
 }
-
-export default App;
