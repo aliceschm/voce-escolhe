@@ -1,11 +1,4 @@
-/* src/reset.css - Modern reset with sensible defaults */
-:root {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --focus-ring: 3px;
-  --focus-color: #2673ff;
-}
-
+/* src/reset.css - Modern reset 
 /* Box sizing */
 *,
 *::before,

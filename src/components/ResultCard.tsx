@@ -16,7 +16,7 @@ export function ResultCard({
 }: ResultCardProps) {
   return (
     <div className="card">
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>
         {text} <strong>{result}</strong>
       </p>

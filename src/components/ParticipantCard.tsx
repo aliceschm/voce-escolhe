@@ -1,16 +1,16 @@
 import Button from "./Button";
 
 interface ParticipantCardProps {
-  //Input props
+  // Input props
   name: string;
   options: string[];
 
-  //Callbacks
+  // Callbacks
   onChangeName: (value: string) => void;
   onChangeOption: (index: number, value: string) => void;
   onSubmit: () => void;
 
-  //UI props (for translation)
+  // UI props (for translation)
   buttonLabel: string;
   text: string;
   nameLabel: string;
@@ -34,31 +34,35 @@ export function ParticipantCard({
 }: ParticipantCardProps) {
   return (
     <div className="card">
-      <h1>{text}</h1>
-      <label>
-        {nameLabel}
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => onChangeName(e.target.value)}
-          placeholder={namePlaceholder}
-        />
-      </label>
+      <div className="content-container">
+        <h1>{text}</h1>
 
-      <div>
-        {options.map((option, index) => (
-          <label key={index}>
-            {optionLabel(index)}
+        <div className="fields-container">
+          <div className="field-group">
+            <label htmlFor="name">{nameLabel}</label>
             <input
+              id="name"
               type="text"
-              value={option}
-              onChange={(e) => onChangeOption(index, e.target.value)}
-              placeholder={optionPlaceholder(index)}
+              value={name}
+              onChange={(e) => onChangeName(e.target.value)}
+              placeholder={namePlaceholder}
             />
-          </label>
-        ))}
-      </div>
-      <div>
+          </div>
+
+          {options.map((option, index) => (
+            <div key={index} className="field-group">
+              <label htmlFor={`option-${index}`}>{optionLabel(index)}</label>
+              <input
+                id={`option-${index}`}
+                type="text"
+                value={option}
+                onChange={(e) => onChangeOption(index, e.target.value)}
+                placeholder={optionPlaceholder(index)}
+              />
+            </div>
+          ))}
+        </div>
+
         <Button label={buttonLabel} onClick={onSubmit} />
       </div>
     </div>
