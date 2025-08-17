@@ -16,11 +16,15 @@ export function ResultCard({
 }: ResultCardProps) {
   return (
     <div className="card">
-      <h2>{title}</h2>
-      <p>
-        {text} <strong>{result}</strong>
-      </p>
-      <Button label={buttonLabel} onClick={onRestart} />
+      <div className="content-container">
+        <h2>{title}</h2>
+        <p>{text} </p>
+        <p>
+          <strong>{result}</strong>
+        </p>
+
+        <Button label={buttonLabel} onClick={onRestart} />
+      </div>
     </div>
   );
 }

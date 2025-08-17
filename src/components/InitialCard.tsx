@@ -18,9 +18,11 @@ export function InitialCard({
 }: InitialCardProps) {
   return (
     <div className="card">
-      <h2>{text}</h2>
-      <PlayersDropdown value={numPlayers} onChange={setNumPlayers} />
-      <Button label={buttonLabel} onClick={onStart} />
+      <div className="content-container">
+        <h2>{text}</h2>
+        <PlayersDropdown value={numPlayers} onChange={setNumPlayers} />
+        <Button label={buttonLabel} onClick={onStart} />
+      </div>
     </div>
   );
 }
