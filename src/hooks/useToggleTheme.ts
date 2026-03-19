@@ -17,5 +17,5 @@ export function useToggleTheme() {
     setThemeIndex((prev) => (prev === 0 ? 1 : 0));
   }
 
-  return { toggleTheme };
+  return { toggleTheme, themeIndex };
 }

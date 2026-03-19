@@ -6,6 +6,12 @@ import { useTranslation } from "react-i18next";
 import i18n from "../utils/i18n";
 
 export function Game() {
+  // i18n translations
+  const { t } = useTranslation();
+
+  // ResultCard phrases (array)
+  const phrases = t("rCard.fields.text", { returnObjects: true }) as string[];
+
   const {
     numPlayers,
     setNumPlayers,
@@ -19,25 +25,20 @@ export function Game() {
     saveParticipant,
     allSaved,
     result,
-  } = useChooseOption();
-
-  // i18n translations
-  const { t } = useTranslation();
-  console.log(i18n.language);
+  } = useChooseOption(phrases);
 
   // ParticipantCard
   const optionLabel = (index: number) =>
     t("pCard.fields.optionLabel", { number: index + 1 });
+
   const optionPlaceholder = (index: number) =>
     t("pCard.fields.optionPlaceholder", { number: index + 1 });
 
-  // ResultCard
-  const phrases = t("rCard.fields.text", { returnObjects: true }) as string[];
-  const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+  // Extract result option
   const option =
-    result?.type === "match" // result from strongMatches - if "match"  it will receive an array, if "random" it will receive a string
-      ? result.data[0]?.option ?? "—" // fallback if undefined
-      : result?.data ?? "—"; // fallback if null or undefined
+    result?.type === "match" // result from strongMatches - if "match" it will receive an array, if "random" it will receive a string
+      ? (result.data[0]?.option ?? "—") // fallback if undefined
+      : (result?.data ?? "—"); // fallback if null or undefined
 
   if (!gameStarted) {
     return (
@@ -53,8 +54,9 @@ export function Game() {
 
   if (!allSaved) {
     const participant = participants[currentPlayer];
+
     return (
-      <div>
+      <div key={`participant-${currentPlayer}`}>
         <ParticipantCard
           text={t("pCard.fields.text") || "Fill participant data"}
           name={participant.name}
@@ -78,7 +80,7 @@ export function Game() {
     <div>
       <ResultCard
         title={t("rCard.fields.title") || "Match Results"}
-        text={randomPhrase}
+        text={result?.phrase ?? ""} // phrase now comes from hook (stable)
         result={option}
         buttonLabel={t("rCard.fields.button")}
         onRestart={resetGame}
