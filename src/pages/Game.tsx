@@ -3,7 +3,7 @@ import { InitialCard } from "../components/InitialCard";
 import { ParticipantCard } from "../components/ParticipantCard";
 import { ResultCard } from "../components/ResultCard";
 import { useTranslation } from "react-i18next";
-import i18n from "../utils/i18n";
+import "../utils/i18n";
 
 export function Game() {
   // i18n translations
