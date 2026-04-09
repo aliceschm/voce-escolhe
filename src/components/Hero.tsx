@@ -24,8 +24,12 @@ export function Hero({
         <p>{subtitle}</p>
 
         <div className="hero-actions">
-          <Button label={startLabel} onClick={onStart} />
-          <Button label={instructionsLabel} onClick={onInstructions} />
+          <Button
+            className="button secondary"
+            label={instructionsLabel}
+            onClick={onInstructions}
+          />
+          <Button className="button" label={startLabel} onClick={onStart} />
         </div>
       </div>
     </section>
