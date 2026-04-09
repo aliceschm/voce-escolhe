@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { useChooseOption } from "../hooks/useChooseOption";
 import { InitialCard } from "../components/InitialCard";
+import { IntroCard } from "../components/IntroCard";
 import { ParticipantCard } from "../components/ParticipantCard";
 import { ResultCard } from "../components/ResultCard";
 import { useTranslation } from "react-i18next";
+import { Hero } from "../components/Hero";
 import "../utils/i18n";
 
 export function Game() {
-  // i18n translations
   const { t } = useTranslation();
+  const [showIntro, setShowIntro] = useState(false);
+  const [showSetup, setShowSetup] = useState(false);
 
-  // ResultCard phrases (array)
   const phrases = t("rCard.fields.text", { returnObjects: true }) as string[];
 
   const {
@@ -27,20 +30,45 @@ export function Game() {
     result,
   } = useChooseOption(phrases);
 
-  // ParticipantCard
   const optionLabel = (index: number) =>
     t("pCard.fields.optionLabel", { number: index + 1 });
 
   const optionPlaceholder = (index: number) =>
     t("pCard.fields.optionPlaceholder", { number: index + 1 });
 
-  // Extract result option
   const option =
-    result?.type === "match" // result from strongMatches - if "match" it will receive an array, if "random" it will receive a string
-      ? (result.data[0]?.option ?? "—") // fallback if undefined
-      : (result?.data ?? "—"); // fallback if null or undefined
+    result?.type === "match"
+      ? (result.data[0]?.option ?? "—")
+      : (result?.data ?? "—");
 
-  if (!gameStarted) {
+  if (!gameStarted && !showIntro && !showSetup) {
+    return (
+      <Hero
+        title={t("hero.fields.title")}
+        subtitle={t("hero.fields.subtitle")}
+        startLabel={t("hero.fields.startButton")}
+        instructionsLabel={t("hero.fields.instructionsButton")}
+        onStart={() => setShowSetup(true)}
+        onInstructions={() => setShowIntro(true)}
+      />
+    );
+  }
+
+  if (!gameStarted && showIntro && !showSetup) {
+    return (
+      <IntroCard
+        text={t("iCard.fields.text")}
+        steps={t("iCard.fields.steps", { returnObjects: true }) as string[]}
+        buttonLabel={t("iCard.fields.button")}
+        onStart={() => {
+          setShowIntro(false);
+          setShowSetup(true);
+        }}
+      />
+    );
+  }
+
+  if (!gameStarted && showSetup) {
     return (
       <InitialCard
         text={t("iCard.fields.text")}
@@ -80,7 +108,7 @@ export function Game() {
     <div>
       <ResultCard
         title={t("rCard.fields.title") || "Match Results"}
-        text={result?.phrase ?? ""} // phrase now comes from hook (stable)
+        text={result?.phrase ?? ""}
         result={option}
         buttonLabel={t("rCard.fields.button")}
         onRestart={resetGame}
