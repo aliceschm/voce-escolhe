@@ -17,7 +17,6 @@
   --header-bg: rgba(5, 8, 18, 0.72);
 }
 
-/* Card entrance animation */
 @keyframes card-enter {
   from {
     opacity: 0;
@@ -31,7 +30,6 @@
   }
 }
 
-/* Soft floating glow */
 @keyframes card-glow {
   0% {
     box-shadow:
@@ -53,7 +51,6 @@
   }
 }
 
-/* Button shimmer */
 @keyframes button-shimmer {
   0% {
     transform: translateX(-120%);
@@ -113,7 +110,7 @@ body {
 
 .dropdown .selected,
 .dropdown .options li,
-.card .button {
+.button {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -399,7 +396,7 @@ main {
   cursor: not-allowed;
 }
 
-.card .button {
+.button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -426,7 +423,7 @@ main {
     0 0 18px rgba(255, 78, 205, 0.18);
 }
 
-.card .button::before {
+.button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -443,7 +440,7 @@ main {
   pointer-events: none;
 }
 
-.card .button:hover {
+.button:hover {
   box-shadow:
     0 12px 28px rgba(139, 92, 246, 0.34),
     0 0 24px rgba(108, 242, 255, 0.18);
@@ -452,15 +449,15 @@ main {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
-.card .button:hover::before {
+.button:hover::before {
   animation: button-shimmer 0.9s ease;
 }
 
-.card .button:active {
+.button:active {
   transform: translateY(0) scale(0.99);
 }
 
-.card .button:focus-visible {
+.button:focus-visible {
   outline: none;
   box-shadow:
     0 0 0 3px rgba(108, 242, 255, 0.14),
@@ -477,6 +474,81 @@ main {
   text-shadow:
     0 0 12px rgba(255, 224, 102, 0.25),
     0 0 24px rgba(108, 242, 255, 0.12);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(5, 8, 18, 0.72) 0%,
+    rgba(5, 8, 18, 0.42) 38%,
+    rgba(5, 8, 18, 0) 72%
+  );
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 18px rgba(108, 242, 255, 0.2),
+    0 0 28px rgba(139, 92, 246, 0.14);
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text-soft);
+  box-shadow: none;
+}
+
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(108, 242, 255, 0.2);
+  color: var(--font-color);
 }
 
 @media (max-width: 480px) {
@@ -516,7 +588,7 @@ main {
     font-size: 0.95rem;
   }
 
-  .card .button {
+  .button {
     width: 100%;
     padding: 0.8rem 1rem;
     font-size: 1rem;
@@ -529,6 +601,14 @@ main {
 
   .card p {
     font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 
   .result-highlight,
