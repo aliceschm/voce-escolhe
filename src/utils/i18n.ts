@@ -8,10 +8,24 @@ import LanguageDetector from "i18next-browser-languagedetector";
 const resources = {
   en: {
     translation: {
+      hero: {
+        fields: {
+          title: "Welcome to Choose Option.",
+          subtitle:
+            "It’s not really a game. It’s just humans asking the stars what to do when they can’t decide on their own.",
+          startButton: "Start",
+          instructionsButton: "Instructions",
+        },
+      },
       iCard: {
         fields: {
           text: "Choose the number of participants",
           button: "Start",
+          steps: [
+            "Choose the number of participants",
+            "Each participant ranks their options by priority",
+            "The app picks a result based on a match, or randomly if no match is found",
+          ],
         },
       },
       pCard: {
@@ -46,10 +60,24 @@ const resources = {
   },
   pt: {
     translation: {
+      hero: {
+        fields: {
+          title: "Bem-vindo ao Choose Option.",
+          subtitle:
+            "Não é exatamente um jogo. São só pessoas pedindo ajuda às estrelas quando não conseguem decidir sozinhas.",
+          startButton: "Começar",
+          instructionsButton: "Instruções",
+        },
+      },
       iCard: {
         fields: {
           text: "Escolha a quantidade de participantes",
           button: "Iniciar",
+          steps: [
+            "Escolha a quantidade de participantes",
+            "Cada participante organiza suas opções por ordem de prioridade",
+            "O app escolhe um resultado com base em match, ou aleatoriamente caso não encontre um match",
+          ],
         },
       },
       pCard: {
