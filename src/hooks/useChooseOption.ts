@@ -126,7 +126,7 @@ export function useChooseOption(resultPhrases: string[]) {
     });
 
     const strongMatches = Object.entries(MATCH_DATA)
-      .filter(([_, data]) => data.votes >= 1)
+      .filter(([, data]) => data.votes >= 1)
       .sort((a, b) => {
         // Sort by votes (desc), then weight (asc)
         if (b[1].votes !== a[1].votes) {

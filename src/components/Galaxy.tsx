@@ -231,7 +231,7 @@ export default function Galaxy({
       gl.clearColor(0, 0, 0, 1);
     }
 
-    let program: Program;
+    const program: Program;
 
     function resize() {
       const scale = 1;
@@ -240,7 +240,7 @@ export default function Galaxy({
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
           gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
+          gl.canvas.width / gl.canvas.height,
         );
       }
     }
@@ -257,7 +257,7 @@ export default function Galaxy({
           value: new Color(
             gl.canvas.width,
             gl.canvas.height,
-            gl.canvas.width / gl.canvas.height
+            gl.canvas.width / gl.canvas.height,
           ),
         },
         uFocal: { value: new Float32Array(focal) },
