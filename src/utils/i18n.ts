@@ -19,7 +19,7 @@ const resources = {
       },
       iCard: {
         fields: {
-          text: "Choose the number of participants",
+          text: "How to ask the universe for help:",
           button: "Start",
           steps: [
             "Choose the number of participants",
