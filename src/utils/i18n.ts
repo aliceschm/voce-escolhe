@@ -71,7 +71,7 @@ const resources = {
       },
       iCard: {
         fields: {
-          text: "Escolha a quantidade de participantes",
+          text: "Como pedir ajuda ao universo:",
           button: "Iniciar",
           steps: [
             "Escolha a quantidade de participantes",
