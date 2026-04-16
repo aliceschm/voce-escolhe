@@ -25,3 +25,7 @@ The main goal of this project is to demonstrate fundamental React concepts such 
 ## Purpose
 
 This project was created as part of my learning process in React, focusing on building a clean and functional user flow while keeping the implementation simple and readable.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
